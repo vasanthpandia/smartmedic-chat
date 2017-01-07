@@ -9,7 +9,11 @@
   "author": "Vasanth Pandiarajan <itsmevasanth@hotmail.com>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^2.0.0",
+    "glue": "^4.1.0",
     "hapi": "^16.0.2",
+    "joi": "^10.1.0",
+    "jsonwebtoken": "^7.2.1",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "socket.io": "^1.7.2"

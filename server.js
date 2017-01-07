@@ -1,47 +1,22 @@
 const Hapi = require('hapi');
-const rp = require('request-promise');
+const Glue = require('glue');
+const dotenv = require('dotenv');
+const config = require('./config');
 
-const server = new Hapi.Server();
-server.connection({
-  host: 'localhost',
-  port: 8000
-});
+if (config.isDevelopment) dotenv.config();
 
-const io = require('socket.io')(server.listener);
-
-server.route({
-  method: 'GET',
-  path:'/status',
-  handler: function (request, reply) {
-      console.log(server.listener);
-      return reply(`You've reached SmartMedic`);
-  }
-});
-
-server.route({
-  method: 'POST',
-  path: '/login',
-  handler: function(request, reply) {
-    const params = JSON.parse(request.payload);
-
-    rp({
-      url: process.env.LOGIN_URL,
-      method: `POST`,
-      form: {
-        email: `${params['email']}`,
-        password: `${params['password']}`
-      }
-    }).then(response => {
-      reply(response);
-    }).catch(error => {
-      reply(error);
-    })
-  }
-})
-
-server.start((err) => {
+Glue.compose(config.manifest, { relativeTo: __dirname }, (err, server) => {
   if (err) {
-      throw err;
+    console.log('server.register err:', err);
+
+    throw (err);
   }
-  console.log('Server running at:', server.info.uri);
+
+  server.on('request-error', (request, error) => {
+    console.log(error);
+  });
+
+  server.start(() => {
+    console.log(`✅  Server is listening on ${server.info.uri.toLowerCase()}`);
+  });
 });
