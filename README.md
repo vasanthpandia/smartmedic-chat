@@ -25,3 +25,9 @@ routes and socket server are inside `lib` folder.
 3. run npm install
 4. Clone smartmedic repository locally - Needed for User Login. (See SmartMedic dependencies in its github page)
 5. Edit `public/chat.html` to add your own code. Add your own JWT.
+
+## ToDo
+
+1. Import all models from smartmedic.
+2. Create ChatRoom Model.
+3. Store Coversations into ChatRoom Model.

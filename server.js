@@ -5,7 +5,7 @@ const config = require('./config');
 
 if (config.isDevelopment) dotenv.config();
 
-Glue.compose(config.manifest, { relativeTo: __dirname }, (err, server) => {
+Glue.compose(require('./manifest'), { relativeTo: __dirname }, (err, server) => {
   if (err) {
     console.log('server.register err:', err);
 
