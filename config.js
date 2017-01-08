@@ -11,12 +11,18 @@ const config = {
     ],
     registrations: [
       {
+        plugin: 'inert'
+      },
+      {
         plugin: './lib/api',
         options: {
           routes: {
             prefix: '/api'
           }
         }
+      },
+      {
+        plugin: './lib/socket'
       }
     ]
   },
