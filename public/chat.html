@@ -16,7 +16,9 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
       $(document).ready(function(){
-        var socket = io();
+        var socket = io.connect('localhost:8000', {
+          query: 'token=' + 'your JWT'
+        });
         $("#send").click(function() {
           var message = $("#m").val();
           console.log(message);

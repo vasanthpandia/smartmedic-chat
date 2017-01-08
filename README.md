@@ -17,3 +17,11 @@ The `config.js` contains application-level configuration.
 `server.js` is the entry main file that starts the application.
 
 routes and socket server are inside `lib` folder.
+
+## Local Testing
+
+1. Clone this repository locally.
+2. run `cp .env.example .env`
+3. run npm install
+4. Clone smartmedic repository locally - Needed for User Login. (See SmartMedic dependencies in its github page)
+5. Edit `public/chat.html` to add your own code. Add your own JWT.
