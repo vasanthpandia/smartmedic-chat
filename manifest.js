@@ -1,5 +1,3 @@
-const dbUrl = process.env.DB_URL;
-
 const manifest = {
   connections: [
     {
@@ -13,18 +11,6 @@ const manifest = {
   registrations: [
     {
       plugin: 'inert'
-    },
-    {
-      plugin: {
-        register: "hapi-mongo-models",
-        options: {
-          mongodb: {
-            uri: dbUrl,
-            options: {}
-          },
-          autoIndex: false
-        }
-      }
     },
     {
       plugin: './lib/api',
