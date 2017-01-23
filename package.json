@@ -17,6 +17,7 @@
     "jsonwebtoken": "^7.2.1",
     "lodash": "^4.17.4",
     "mongoose": "^4.7.6",
+    "mongoose-schema-extend": "^0.2.2",
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "socket.io": "^1.7.2",
