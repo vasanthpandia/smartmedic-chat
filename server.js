@@ -16,6 +16,14 @@ Glue.compose(require('./manifest'), { relativeTo: __dirname }, (err, server) => 
     console.log(error);
   });
 
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: function(request, reply) {
+      reply.redirect('/api/chat')
+    }
+  })
+
   server.start(() => {
     console.log(`✅  Server is listening on ${server.info.uri.toLowerCase()}`);
   });

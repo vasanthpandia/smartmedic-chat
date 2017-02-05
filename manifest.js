@@ -1,8 +1,8 @@
 const manifest = {
   connections: [
     {
-      host: 'localhost',
-      port: 8000,
+      host: process.env.HOST,
+      port: process.env.PORT,
       routes: {
         cors: true
       }
@@ -11,6 +11,9 @@ const manifest = {
   registrations: [
     {
       plugin: 'inert'
+    },
+    {
+      plugin: 'vision'
     },
     {
       plugin: './lib/api',

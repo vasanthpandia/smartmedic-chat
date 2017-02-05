@@ -26,6 +26,7 @@
     "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "socket.io": "^1.7.2",
-    "socketio-jwt": "^4.5.0"
+    "socketio-jwt": "^4.5.0",
+    "vision": "^4.1.1"
   }
 }
